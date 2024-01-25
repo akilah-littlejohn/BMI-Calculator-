@@ -1,0 +1,13 @@
+<section>
+    <article>
+        <h1>{{ title }}</h1>
+        <p>{{ paragraph }}</p>
+    </article>
+
+    <div>
+        @for (column of columns; track column) {
+        <h3>{{ column.title }}</h3>
+        <p> {{ column.paragraph }} </p>
+        }
+    </div>
+</section>
