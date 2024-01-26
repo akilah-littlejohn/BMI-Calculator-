@@ -11,4 +11,5 @@ import { BmiCardComponent } from '../../ui/bmi-card/card.component';
 })
 export class CardsComponent {
   @Input()cardItems!: Array<ContentInfo>
+  @Input() columnImages!:Array<string>;
 }

@@ -1,8 +1,8 @@
-
 <bmi-layout>
     <app-header [title]="bmi.header.title" [paragraph]="bmi.header.paragraph"></app-header>
     <app-article [title]="bmi.articleResults.title" [paragraph]="bmi.articleResults.paragraph"></app-article>
-    <app-column [columns]="bmi.column" [title]="bmi.articleLimitations.title" [paragraph]="bmi.articleLimitations.paragraph"></app-column>
+    <app-column [columns]="bmi.column" [title]="bmi.articleLimitations.title"
+        [paragraph]="bmi.articleLimitations.paragraph" [columnImages]="columnImages">
+    </app-column>
     <app-card [cardItems]="bmi.card"></app-card>
 </bmi-layout>
-

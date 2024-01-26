@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {  ContentInfo } from '../../../models/content-interface/interfaces';
 
 @Component({
@@ -9,7 +9,9 @@ import {  ContentInfo } from '../../../models/content-interface/interfaces';
   styleUrl: './column.component.css'
 })
 export class ColumnComponent {
+
 @Input() title!:string;
 @Input()  paragraph!:string;
 @Input() columns!:Array<ContentInfo>
+@Input() columnImages!:Array<string>;
 }
