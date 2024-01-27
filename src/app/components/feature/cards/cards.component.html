@@ -1,6 +1,7 @@
-@for(cardItem of cardItems; track cardItem ){
+@for(cardItem of cardItems; track cardItem; let i = $index ){
 <section>
     <bmi-card>
+        <img [src]="cardImages[i]" alt="">
         <h4>{{ cardItem.title }}</h4>
         <p>{{ cardItem.paragraph }}</p>
     </bmi-card>

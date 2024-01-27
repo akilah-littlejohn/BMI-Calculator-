@@ -27,20 +27,4 @@ import { ContentItems } from './models/constants/content';
 export class AppComponent {
   bmi = ContentItems;
 
-  headerImage: string = "assets/images/log.svg";
-
-  columnImages: Array<string> = [
-    "assets/images/icon-eating.svg",
-    "assets/images/icon-exercise.svg",
-    "assets/images/icon-sleep.svg",
-  ];
-
-  cardImages: Array<string> = [
-    "assets/images/icon-gender.svg",
-    "assets/images/icon-age.svg",
-    "assets/images/icon-muscle.svg",
-    "assets/images/icon-pregnancy.svg",
-    "assets/images/icon-race.svg",
-   
-  ];
 }
