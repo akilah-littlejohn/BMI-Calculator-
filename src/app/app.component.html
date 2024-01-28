@@ -1,8 +1,13 @@
 <bmi-layout>
-    <app-header [title]="bmi.header.title" [paragraph]="bmi.header.paragraph"></app-header>
-    <app-article [title]="bmi.articleResults.title" [paragraph]="bmi.articleResults.paragraph"></app-article>
+
+    <app-header [title]="bmi.header.content.title" [paragraph]="bmi.header.content.paragraph"></app-header>
+
+    <app-article [title]="bmi.articleResults.content.title" [paragraph]="bmi.articleResults.content.paragraph" [image]="bmi.articleResults.Image"></app-article>
+
     <app-column [columns]="bmi.column.content" [title]="bmi.articleLimitations.title"
         [paragraph]="bmi.articleLimitations.paragraph" [columnImages]="bmi.column.images">
     </app-column>
+
     <app-card [cardItems]="bmi.card.content" [cardImages]="bmi.card.images"></app-card>
+
 </bmi-layout>

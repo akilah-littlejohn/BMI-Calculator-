@@ -11,4 +11,5 @@ import { BmiCardComponent } from '../../ui/bmi-card/card.component';
 export class ArticleComponent {
   @Input()title!: string;
   @Input()paragraph !: string;
+  @Input()image !: string;
 }

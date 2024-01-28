@@ -1,7 +1,7 @@
 export interface Content {
-    header: ContentInfo;
+    header: VisualContentInfo;
 
-    articleResults: ContentInfo;
+    articleResults:VisualContentInfo;
     articleLimitations: ContentInfo;
     column: {
         content: ContentInfo[],
@@ -14,7 +14,11 @@ export interface Content {
 
     };
 }
-
+// refactor interfaces to be more dry
+export interface VisualContentInfo  {
+    content: ContentInfo;
+    Image: string;
+}
 export interface Article {
     first: ContentInfo;
     second: ContentInfo
@@ -31,6 +35,4 @@ export interface ContentInfo {
     title: string;
     paragraph: string;
 }
-{
 
-}
