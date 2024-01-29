@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RadioButtonComponent } from './radio-button.component';
+import { BmiInputRadioComponent } from './bmi-input-radio.component';
 
-describe('RadioButtonComponent', () => {
-  let component: RadioButtonComponent;
-  let fixture: ComponentFixture<RadioButtonComponent>;
+describe('BmiInputRadioComponent', () => {
+  let component: BmiInputRadioComponent;
+  let fixture: ComponentFixture<BmiInputRadioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RadioButtonComponent]
+      imports: [BmiInputRadioComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(RadioButtonComponent);
+    fixture = TestBed.createComponent(BmiInputRadioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
