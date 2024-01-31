@@ -1,6 +1,7 @@
 import { Content } from "../content-interface/interfaces";
 
 export const ContentItems: Content = {
+    
     header: {
         content: {
             title: "Body Mass Index Calculator",
@@ -11,6 +12,7 @@ export const ContentItems: Content = {
         },
         Image: "assets/images/logo.svg"
     },
+
     articleResults: {
         content: {
             title: "What your BMI result means",
@@ -25,6 +27,7 @@ export const ContentItems: Content = {
 
         Image: "assets/images/image-man-eating.webp"
     },
+
     articleLimitations: {
         title: "Limitations of BMI",
         paragraph: `Although BMI is often a practical indicator of healthy weight, it is not suited for 
@@ -32,6 +35,7 @@ export const ContentItems: Content = {
             certain cases, the measurement may not be beneficial to use.`
     }
     ,
+
     column: {
         content: [
             { title: "Healthy eating", paragraph: "Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood." },
