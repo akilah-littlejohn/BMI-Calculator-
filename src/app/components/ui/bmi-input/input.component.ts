@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 export class BmiInputComponent {
 @Input()label!: string; 
 @Input()name!: string;  
-@Input()metric!: string;
+@Input()unit!: string;
 @Input()selectedUnit!: string;
+@Input()min!: string;
+@Input()max!: string;
 }

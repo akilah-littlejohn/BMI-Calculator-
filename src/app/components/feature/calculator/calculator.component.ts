@@ -1,19 +1,41 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BmiInputComponent } from '../../ui/bmi-input/input.component';
 import { BmiInputRadioComponent } from '../../ui/bmi-input-radio/bmi-input-radio.component';
 import { FormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+import { BmiResultComponent } from '../../ui/bmi-result/bmi-result.component';
 
 @Component({
   selector: 'bmi-calculator',
   standalone: true,
-  imports: [BmiInputComponent, BmiInputRadioComponent, FormsModule, JsonPipe],
+  imports: [
+    BmiInputComponent,
+    BmiInputRadioComponent,
+    FormsModule, 
+    JsonPipe, 
+    BmiResultComponent
+  ],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.css'
 })
-export class CalculatorComponent { 
+export class CalculatorComponent {
 
-selectedUnit!: string;
+  selectedUnit!: string;
+  bmiResult!: any;
+  healthyBmi!: boolean;
+  statement1 = `this is the first statement`
+  statement2 = `this is the second statement`
+  defaultStatement = `this is the default statement`
+
+  constructor() {
+
+  }
+
+
+
+
+
 
 
 }

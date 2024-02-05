@@ -1,7 +1,18 @@
-
+article {
+    display: flex;  
+}           
 img {
     height: 33.3125rem;
     width: auto;
+    padding-left: 5.25rem;   
+
+}
+
+div {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    padding: 5.25rem;   
 }
 
 
