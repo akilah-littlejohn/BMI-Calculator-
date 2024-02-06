@@ -11,40 +11,38 @@
 
   <fieldset>
     <bmi-input name="cm" label="Height" min="0" max="300" unit="cm"></bmi-input>
-    <bmi-input name="kg"label="Weight" min="0" max="2" unit="kg"></bmi-input>
+    <bmi-input name="kg" label="Weight" min="0" max="2" unit="kg"></bmi-input>
   </fieldset>
 
   } @else {
 
   <fieldset>
-    <bmi-input name="ft"label="Height" min="0" max="7" unit="ft"></bmi-input>
+    <bmi-input name="ft" label="Height" min="0" max="7" unit="ft"></bmi-input>
     <bmi-input name="in" min="0" max="11" unit="in"></bmi-input>
-    <bmi-input name="st"label="Weight" min="0" max="43" unit="st"></bmi-input>
+    <bmi-input name="st" label="Weight" min="0" max="43" unit="st"></bmi-input>
     <bmi-input name="lbs" min="0" max="605" unit="lbs"></bmi-input>
   </fieldset>
 
   }
 
-  @switch(healthyBmi) {
-  @case(true){
-  <bmi-result>
-    <h3> Your BMI result is: </h3>
-    <p> ur healthy</p>
-  </bmi-result>bmi-result
-  }
-  @case(false){
-  <bmi-result>
-    <h3> Your BMI result is: </h3>
-    <p> ur unhealthy</p>
+  @switch(bmiResult){
+  @case('healthy'){
+  <bmi-result classification="healthy" range="0">
   </bmi-result>
-
   }
-  @default {
+  @case('underweight'){
+  <bmi-result classification="underweight" range="0">
+  </bmi-result>
+  }
+  @case('obese'){
+  <bmi-result classification="obese" range="0">
+  </bmi-result>
+  }
+  @default(){
   <bmi-result>
     <h3> Welcome </h3>
     <p>Enter your height and weight and you’ll see your BMI result here</p>
   </bmi-result>
-
   }
   }
 

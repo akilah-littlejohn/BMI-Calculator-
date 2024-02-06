@@ -22,11 +22,10 @@ import { BmiResultComponent } from '../../ui/bmi-result/bmi-result.component';
 export class CalculatorComponent {
 
   selectedUnit!: string;
-  bmiResult!: any;
-  healthyBmi!: boolean;
-  statement1 = `this is the first statement`
-  statement2 = `this is the second statement`
-  defaultStatement = `this is the default statement`
+  bmiResult!: string;
+
+
+
 
   constructor() {
 

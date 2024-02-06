@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'bmi-result',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './bmi-result.component.css'
 })
 export class BmiResultComponent {
-
+  @Input() classification!:string;
+  @Input() range!:string;
 }

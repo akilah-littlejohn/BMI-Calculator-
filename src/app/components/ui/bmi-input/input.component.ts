@@ -15,4 +15,6 @@ export class BmiInputComponent {
 @Input()selectedUnit!: string;
 @Input()min!: string;
 @Input()max!: string;
+@Input()maxlength!: string;  
+@Input()minLength!: string;
 }
