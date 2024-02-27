@@ -1,4 +1,4 @@
-<form>
+
   <h3>Enter your details below</h3>
 
   <fieldset>
@@ -8,20 +8,24 @@
 
 
   @if ('metric' === selectedUnit) {
-
+<form [formGroup]="metricFormGroup">
   <fieldset>
-    <bmi-input name="cm" label="Height" min="0" max="300" unit="cm"></bmi-input>
+    <bmi-input  name="cm" label="Height" min="0" max="300" unit="cm"></bmi-input>
     <bmi-input name="kg" label="Weight" min="0" max="2" unit="kg"></bmi-input>
   </fieldset>
+</form>
+
 
   } @else {
-
+<form [formGroup]="imperialFormGroup">
   <fieldset>
     <bmi-input name="ft" label="Height" min="0" max="7" unit="ft"></bmi-input>
     <bmi-input name="in" min="0" max="11" unit="in"></bmi-input>
     <bmi-input name="st" label="Weight" min="0" max="43" unit="st"></bmi-input>
     <bmi-input name="lbs" min="0" max="605" unit="lbs"></bmi-input>
   </fieldset>
+</form>
+
 
   }
 
@@ -46,4 +50,3 @@
   }
   }
 
-</form>
