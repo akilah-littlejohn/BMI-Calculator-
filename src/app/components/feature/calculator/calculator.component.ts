@@ -26,23 +26,35 @@ export class CalculatorComponent implements OnInit {
 
   ngOnInit(): void {
 
-  }
-  createMetricForm() { 
-    this.metricFormGroup = new FormGroup({
-      cm: new FormControl (['']),
-      kg:  new FormControl (['']),
-    })
-    
+    this.createMetricForm();
+    this.createImperialForm();
+
+
+
   }
 
-  createImperialForm() {
-    this.imperialFormGroup =  new FormGroup({
-      ft:  new FormControl (['']),
-      in:  new FormControl (['']),
-      st:  new FormControl (['']),
-      lbs:  new FormControl ([''])
+
+  createMetricForm(): void {
+    this.metricFormGroup = new FormGroup({
+      cm: new FormControl(['']),
+      kg: new FormControl(['']),
     })
-   }
+
+  }
+
+  createImperialForm(): void {
+    this.imperialFormGroup = new FormGroup({
+      ft: new FormControl(['']),
+      in: new FormControl(['']),
+      st: new FormControl(['']),
+      lbs: new FormControl([''])
+    })
+
+  }
+  onSubmit(form:any){
+    console.log(form)
+  }
+ 
 
 
 
