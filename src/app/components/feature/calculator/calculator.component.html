@@ -9,7 +9,7 @@
 
 
 -  @if ('metric' === selectedUnit) {
-<form [formGroup]="metricFormGroup">
+<form [formGroup]="metricFormGroup" (input)="calculateBmiMetric()">
   <fieldset>
     <bmi-input  [control]="$any(metricFormGroup.get('cm'))" name="cm" label="Height" min="0" max="300" unit="cm"></bmi-input>
     <bmi-input [control]="$any(metricFormGroup.get('kg'))" name="kg" label="Weight" min="0" max="2" unit="kg"></bmi-input>

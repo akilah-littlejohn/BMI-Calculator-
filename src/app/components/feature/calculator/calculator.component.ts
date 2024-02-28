@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BmiInputComponent } from '../../ui/bmi-input/input.component';
 import { BmiInputRadioComponent } from '../../ui/bmi-input-radio/bmi-input-radio.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { BmiResultComponent } from '../../ui/bmi-result/bmi-result.component';
 
 @Component({
@@ -51,10 +50,17 @@ export class CalculatorComponent implements OnInit {
     })
 
   }
-  onSubmit(form:any){
-    console.log(form)
+
+  calculateBmiMetric(): void {
+    const cm = this.metricFormGroup.get('cm')?.value;
+    const kg = this.metricFormGroup.get('kg')?.value;
+    if (cm && kg) {
+      const heightInMeters = cm / 100;
+      const bmi = kg / (heightInMeters * heightInMeters);
+      console.log('Metric BMI:', bmi);
+    }
   }
- 
+
 
 
 
