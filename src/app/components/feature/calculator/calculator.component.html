@@ -8,8 +8,8 @@
   
 
 
--  @if ('metric' === selectedUnit) {
-<form [formGroup]="metricFormGroup" (input)="calculateBmiMetric()">
+ @if ('metric' === selectedUnit) {
+<form [formGroup]="metricFormGroup" (change)="calculateBmiMetric()">
   <fieldset>
     <bmi-input  [control]="$any(metricFormGroup.get('cm'))" name="cm" label="Height" min="0" max="300" unit="cm"></bmi-input>
     <bmi-input [control]="$any(metricFormGroup.get('kg'))" name="kg" label="Weight" min="0" max="2" unit="kg"></bmi-input>
@@ -19,12 +19,12 @@
 
 
   } @else {
-<form [formGroup]="imperialFormGroup">
+<form [formGroup]="imperialFormGroup" (change)="calculateImperialMetric()">
   <fieldset>
-    <bmi-input [control]="$any(imperialFormGroup.get('ft'))" name="ft" label="Height" min="0" max="7" unit="ft"></bmi-input>
-    <bmi-input [control]="$any(imperialFormGroup.get('in'))" name="in" min="0" max="11" unit="in"></bmi-input>
-    <bmi-input [control]="$any(imperialFormGroup.get('st'))" name="st" label="Weight" min="0" max="43" unit="st"></bmi-input>
-    <bmi-input [control]="$any(imperialFormGroup.get('lbs'))" name="lbs" min="0" max="605" unit="lbs"></bmi-input>
+    <bmi-input [control]="$any(imperialFormGroup.get('ft'))" name="ft" label="Height"  unit="ft"></bmi-input>
+    <bmi-input [control]="$any(imperialFormGroup.get('in'))" name="in"   unit="in"></bmi-input>
+    <bmi-input [control]="$any(imperialFormGroup.get('st'))" name="st" label="Weight" unit="st"></bmi-input>
+    <bmi-input [control]="$any(imperialFormGroup.get('lbs'))" name="lbs"  unit="lbs"></bmi-input>
   </fieldset>
 </form>
 
