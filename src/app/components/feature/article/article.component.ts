@@ -12,4 +12,8 @@ export class ArticleComponent {
   @Input()title!: string;
   @Input()paragraph !: string;
   @Input()image !: string;
+
+  g(){
+    console.log('g');
+  }
 }

@@ -1,2 +1,8 @@
-<label [for]="name">{{label}}</label>
-<input type="radio" [id]="name" name="name">
+<label [for]="value">{{label}}</label>
+<input 
+  type="radio" 
+  [id]="value" 
+  [name]="name"
+  [value]="value"
+  [checked]="checked"
+  (change)="onInputChange($event)">

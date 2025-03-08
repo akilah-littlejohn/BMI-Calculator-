@@ -1,2 +1,11 @@
 <label [for]="name">{{ label }}</label>
-<input type="number" [name]="name" id="name" [min]="min" [max]="max" [minLength]="minLength"><span>{{ unit }}</span>
+<input 
+  type="number" 
+  [id]="name"
+  [name]="name"
+  [min]="min"
+  [max]="max"
+  [value]="value"
+  [disabled]="disabled"
+  (input)="onInputChange($event)">
+<span>{{ unit }}</span>

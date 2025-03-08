@@ -1,49 +1,99 @@
-<form>
+<form [formGroup]="bmiForm">
   <h3>Enter your details below</h3>
 
   <fieldset>
-    <bmi-input-radio label="Metric" value="metric" (change)=" selectedUnit = 'metric' "></bmi-input-radio>
-    <bmi-input-radio label="Imperial" value="imperial" (change)=" selectedUnit = 'imperial' "></bmi-input-radio>
+    <bmi-input-radio 
+      label="Metric" 
+      value="metric" 
+      name="unit"
+      [checked]="selectedUnit === 'metric'"
+    (change)="onUnitChange('metric')">
+
+      [value]="'metric'">
+    </bmi-input-radio>
+    <bmi-input-radio 
+      label="Imperial" 
+      value="imperial" 
+      name="unit"
+      [checked]="selectedUnit === 'imperial'"
+      (change)="onUnitChange('imperial')"
+      >
+    </bmi-input-radio>
   </fieldset>
 
-
-  @if ('metric' === selectedUnit) {
-
-  <fieldset>
-    <bmi-input name="cm" label="Height" min="0" max="300" unit="cm"></bmi-input>
-    <bmi-input name="kg" label="Weight" min="0" max="2" unit="kg"></bmi-input>
-  </fieldset>
-
-  } @else {
-
-  <fieldset>
-    <bmi-input name="ft" label="Height" min="0" max="7" unit="ft"></bmi-input>
-    <bmi-input name="in" min="0" max="11" unit="in"></bmi-input>
-    <bmi-input name="st" label="Weight" min="0" max="43" unit="st"></bmi-input>
-    <bmi-input name="lbs" min="0" max="605" unit="lbs"></bmi-input>
-  </fieldset>
-
+  @if (selectedUnit === 'metric') {
+    <fieldset formGroupName="metricInputs">
+      <bmi-input 
+        name="cm" 
+        label="Height" 
+        [min]="0"
+        [max]="300"
+        unit="cm" 
+        formControlName="cm">
+      </bmi-input>
+      <bmi-input 
+        name="kg" 
+        label="Weight" 
+        [min]="0"
+        [max]="200"
+        unit="kg" 
+        formControlName="kg">
+      </bmi-input>
+    </fieldset>
+  } 
+  
+  @else if (selectedUnit === 'imperial') {
+    <fieldset formGroupName="imperialInputs">
+      <bmi-input 
+        name="ft" 
+        label="Height" 
+        [min]="0"
+        [max]="7"
+        unit="ft" 
+        formControlName="ft">
+      </bmi-input>
+      <bmi-input 
+        name="in" 
+        label="Inches"
+        [min]="0"
+        [max]="11"
+        unit="in" 
+        formControlName="in">
+      </bmi-input>
+      <bmi-input 
+        name="st" 
+        label="Weight" 
+        [min]="0"
+        [max]="43"
+        unit="st" 
+        formControlName="st">
+      </bmi-input>
+      <bmi-input 
+        name="lbs" 
+        label="Pounds"
+        [min]="0"
+        [max]="13"
+        unit="lbs" 
+        formControlName="lbs">
+      </bmi-input>
+    </fieldset>
   }
 
-  @switch(bmiResult){
-  @case('healthy'){
-  <bmi-result classification="healthy" range="0">
-  </bmi-result>
+  @switch(bmiResult) {
+    @case('healthy') {
+      <bmi-result classification="healthy" range="0"></bmi-result>
+    }
+    @case('underweight') {
+      <bmi-result classification="underweight" range="0"></bmi-result>
+    }
+    @case('obese') {
+      <bmi-result classification="obese" range="0"></bmi-result>
+    }
+    @default {
+      <bmi-result>
+        <h3>Welcome</h3>
+        <p>Enter your height and weight and you'll see your BMI result here</p>
+      </bmi-result>
+    }
   }
-  @case('underweight'){
-  <bmi-result classification="underweight" range="0">
-  </bmi-result>
-  }
-  @case('obese'){
-  <bmi-result classification="obese" range="0">
-  </bmi-result>
-  }
-  @default(){
-  <bmi-result>
-    <h3> Welcome </h3>
-    <p>Enter your height and weight and you’ll see your BMI result here</p>
-  </bmi-result>
-  }
-  }
-
 </form>
