@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form [formGroup]="bmiForm">
   <h3>Enter your details below</h3>
 
@@ -19,7 +20,38 @@
       (change)="onUnitChange('imperial')"
       >
     </bmi-input-radio>
+=======
+
+  <h3>Enter your details below</h3>
+
+  <fieldset>
+    <bmi-input-radio label="Metric" value="metric" (change)=" selectedUnit = 'metric' "></bmi-input-radio>
+    <bmi-input-radio label="Imperial" value="imperial" (change)=" selectedUnit = 'imperial' "></bmi-input-radio>
   </fieldset>
+  
+
+
+ @if ('metric' === selectedUnit) {
+<form [formGroup]="metricFormGroup" (change)="calculateBmiMetric()">
+  <fieldset>
+    <bmi-input  [control]="$any(metricFormGroup.get('cm'))" name="cm" label="Height" min="0" max="300" unit="cm"></bmi-input>
+    <bmi-input [control]="$any(metricFormGroup.get('kg'))" name="kg" label="Weight" min="0" max="2" unit="kg"></bmi-input>
+  </fieldset>
+
+</form>
+
+
+  } @else {
+<form [formGroup]="imperialFormGroup" (change)="calculateImperialMetric()">
+  <fieldset>
+    <bmi-input [control]="$any(imperialFormGroup.get('ft'))" name="ft" label="Height"  unit="ft"></bmi-input>
+    <bmi-input [control]="$any(imperialFormGroup.get('in'))" name="in"   unit="in"></bmi-input>
+    <bmi-input [control]="$any(imperialFormGroup.get('st'))" name="st" label="Weight" unit="st"></bmi-input>
+    <bmi-input [control]="$any(imperialFormGroup.get('lbs'))" name="lbs"  unit="lbs"></bmi-input>
+>>>>>>> 8f92072f3d80e951f488ef058fc0cad85be6c995
+  </fieldset>
+</form>
+
 
   @if (selectedUnit === 'metric') {
     <fieldset formGroupName="metricInputs">
@@ -96,4 +128,24 @@
       </bmi-result>
     }
   }
+<<<<<<< HEAD
 </form>
+=======
+  @case('underweight'){
+  <bmi-result classification="underweight" range="0">
+  </bmi-result>
+  }
+  @case('obese'){
+  <bmi-result classification="obese" range="0">
+  </bmi-result>
+  }
+  @default(){
+  <bmi-result>
+    <h3> Welcome </h3>
+    <p>Enter your height and weight and you’ll see your BMI result here</p>
+  </bmi-result>
+  } 
+}
+  
+
+>>>>>>> 8f92072f3d80e951f488ef058fc0cad85be6c995

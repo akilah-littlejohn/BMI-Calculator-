@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+=======
+import { Component, Input } from '@angular/core';
+import { ReactiveFormsModule,FormControl } from '@angular/forms';
+>>>>>>> 8f92072f3d80e951f488ef058fc0cad85be6c995
 
 @Component({
   selector: 'bmi-input',
@@ -14,6 +19,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@a
     }
   ]
 })
+<<<<<<< HEAD
 export class BmiInputComponent implements ControlValueAccessor {
   @Input() label!: string;
   @Input() name!: string;
@@ -48,6 +54,18 @@ export class BmiInputComponent implements ControlValueAccessor {
     this.onChange(this.value);
     this.onTouched();
   }
+=======
+export class BmiInputComponent {
+  @Input() control = new FormControl();
+  @Input() label!: string;
+  @Input() name!: string;
+  @Input() unit!: string;
+  @Input() selectedUnit!: string;
+  @Input() min!: string;
+  @Input() max!: string;
+  @Input() maxlength!: string;
+  @Input() minLength!: string;
+>>>>>>> 8f92072f3d80e951f488ef058fc0cad85be6c995
 }
 
 
